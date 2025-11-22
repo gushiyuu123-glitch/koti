@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- =========================
+      Basic SEO
+========================= -->
+<title>Koti — Quiet Living Furniture｜静けさをつくる北欧ミニマル家具</title>
+
+<meta name="description"
+  content="Koti は、“静けさをつくる” 北欧ミニマル家具ブランド。木の温度と光の余白を活かし、暮らしの中に落ち着いた空気を生む家具をデザインしています。" />
+
+<meta name="keywords"
+  content="Koti, 北欧家具, ミニマル家具, Scandinavian Design, Quiet Living, インテリア, 木製家具, シンプル家具" />
+
+<link rel="canonical" href="https://your-domain.com/" />
+
+
+<!-- =========================
+      OGP / SNS Share
+========================= -->
+<meta property="og:title" content="Koti — Quiet Living Furniture" />
+<meta property="og:description"
+  content="光と余白を中心に据えた、静けさをつくる北欧ミニマル家具ブランド。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-domain.com/" />
+
+<!-- ↓ og画像（1200 × 630推奨） -->
+<meta property="og:image" content="https://your-domain.com/ogp.png" />
+
+<meta property="og:site_name" content="Koti Furniture" />
+<meta property="og:locale" content="ja_JP" />
+
+
+<!-- =========================
+      Twitter Card
+========================= -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Koti — Quiet Living Furniture" />
+<meta name="twitter:description"
+  content="光と余白、静けさのデザイン。北欧ミニマル家具ブランド Koti。" />
+<meta name="twitter:image" content="https://your-domain.com/ogp.jpg" />
+
+
+<!-- =========================
+      Favicon（全環境対応）
+========================= -->
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest" />
+
+<meta name="theme-color" content="#ffffff" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&family=Poppins:wght@300;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background-color: #ffffff;
+      color: #222222;
+    }
+
+    .jp {
+      font-family: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    }
+
+    /* Hero 背景 */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ===== Scroll Fade-In (Koti Minimal) ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .heading-koti {
+      letter-spacing: 0.22em;
+    }
+
+    .heading-koti.wide {
+      letter-spacing: 0.26em;
+      /* ベースとの差分 +0.04em */
+    }
+
+    .koti-line {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .fade-btn {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .fade-btn.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-grain {
+      position: relative;
+    }
+
+    .hero-grain::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M/wHwAFgwJ/lGNzcwAAAABJRU5ErkJggg==");
+      opacity: 0.015;
+      mix-blend-mode: soft-light;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+  <!-- ===== Header ===== -->
+  <header id="header"
+    class="fixed top-0 left-0 w-full z-30 bg-white/60 backdrop-blur-md border-b border-neutral-200/60 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
+
+      <!-- Brand -->
+      <div class="flex flex-col leading-tight select-none">
+        <span class="tracking-[0.32em] text-[0.75rem] md:text-sm uppercase text-neutral-900 font-light">
+          K O T I
+        </span>
+        <span class="text-[0.6rem] md:text-[0.65rem] text-neutral-500 tracking-wide mt-[1px]">
+          Quiet Living Furniture
+        </span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex items-center gap-6 md:gap-8 text-xs md:text-sm">
+        <a href="#concept"
+          class="relative text-neutral-600 hover:text-neutral-900 transition-colors duration-200 after:absolute after:left-0 after:-bottom-[2px] after:w-0 after:h-[1px] after:bg-neutral-900 after:transition-all after:duration-300 hover:after:w-full">
+          Concept
+        </a>
+        <a href="#products"
+          class="relative text-neutral-600 hover:text-neutral-900 transition-colors duration-200 after:absolute after:left-0 after:-bottom-[2px] after:w-0 after:h-[1px] after:bg-neutral-900 after:transition-all after:duration-300 hover:after:w-full">
+          Products
+        </a>
+        <a href="#gallery"
+          class="relative text-neutral-600 hover:text-neutral-900 transition-colors duration-200 after:absolute after:left-0 after:-bottom-[2px] after:w-0 after:h-[1px] after:bg-neutral-900 after:transition-all after:duration-300 hover:after:w-full">
+          Gallery
+        </a>
+        <a href="#about"
+          class="relative text-neutral-600 hover:text-neutral-900 transition-colors duration-200 after:absolute after:left-0 after:-bottom-[2px] after:w-0 after:h-[1px] after:bg-neutral-900 after:transition-all after:duration-300 hover:after:w-full">
+          About
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="relative min-h-screen flex items-center hero-grain">
+
+    <!-- 背景画像 + 左からの白グラデーション -->
+    <div class="hero-bg">
+      <img src="koti-hero.png" alt="Koti chair in a bright Nordic interior" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/25 to-white/0"></div>
+    </div>
+
+    <!-- コンテンツ -->
+    <div class="relative w-full">
+      <div class="max-w-[460px] ml-4 md:ml-16 lg:ml-24 xl:ml-32 space-y-6 pt-28 pb-20">
+
+        <p class="tracking-[0.35em] uppercase text-[0.7rem] md:text-xs text-neutral-500">
+          Koti — Scandinavian Quiet Living
+        </p>
+
+        <h1
+          class="jp text-3xl md:text-4xl lg:text-5xl leading-relaxed text-neutral-900 fade-in md:whitespace-nowrap">
+          静けさをつくる家具。
+        </h1>
+
+        <p class="jp text-sm md:text-base text-neutral-600 leading-relaxed">
+          やわらかな朝の光と、白い壁。<br />
+          そこに、すっと馴染む木の椅子。<br />
+          Koti は、暮らしの中に「心の余白」をつくるための<br />家具ブランドです。
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a href="#products" class="fade-btn inline-flex items-center justify-center 
+         px-6 py-2.5 text-xs md:text-sm 
+         rounded-full bg-neutral-900 text-white
+         tracking-[0.20em] uppercase
+         transition-all duration-300">
+            View Collection
+          </a>
+
+          <a href="#concept" class="fade-btn inline-flex items-center justify-center 
+         px-6 py-2.5 text-xs md:text-sm 
+         tracking-[0.20em] uppercase
+         border border-neutral-200 bg-white 
+         text-neutral-600 
+         hover:text-neutral-900 hover:border-neutral-300
+         transition-all duration-300
+         rounded-full">
+            Concept
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONCEPT ===== -->
+  <section id="concept" class="py-24 md:py-32 bg-white mt-5">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12">
+
+      <p class="tracking-[0.3em] text-[0.7rem] md:text-xs uppercase text-neutral-500 mb-4 fade-in">
+        CONCEPT
+      </p>
+
+      <div class="flex flex-col justify-center">
+        <h2 class="jp text-2xl md:text-3xl leading-tight mb-12 text-neutral-900 mt-3 fade-in">
+          光と余白を、暮らしの中心に。
+        </h2>
+      </div>
+
+      <div class="grid gap-14 md:grid-cols-[1.25fr_1fr] items-center">
+
+        <!-- 左 : テキスト -->
+        <div class="jp text-sm md:text-base text-neutral-700 leading-[1.9] space-y-7 max-w-[520px] fade-in">
+          <p>
+            北欧の暮らしは、光と余白を大切にします。
+            たくさん持つことよりも、少ないものと丁寧につき合うこと。
+          </p>
+
+          <p>
+            Koti の家具は、自然な木目と静かなシルエットから生まれる
+            「落ち着いた空気」をデザインしています。
+          </p>
+
+          <p>
+            朝、カーテンを開けて差し込む光。
+            仕事から帰ってきて、ふと深く息をつきたくなる部屋。
+            そんな時間をそっと支える、“静けさの家具”でありたいと考えています。
+          </p>
+        </div>
+
+        <!-- 右：画像 -->
+        <div
+          class="aspect-[5/4] md:aspect-[4/3] overflow-hidden mt-[-80px] fade-in shadow-[4px_4px_12px_rgba(0,0,0,0.06)]">
+          <img src="koti-detail-01.png" alt="Detail of Koti furniture" class="w-full h-full object-cover"
+            loading="lazy" />
+        </div>
+
+        <p class="text-xs text-neutral-500 leading-relaxed max-w-[360px] fade-in">
+          光と影、木の温度。Koti が大切にしているのは「派手さ」ではなく、
+          部屋に流れる“静かな空気”の質です。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / PHILOSOPHY ===== -->
+  <section id="about" class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 space-y-20">
+
+      <!-- Heading -->
+      <div class="max-w-xl">
+        <p class="tracking-[0.3em] text-[0.7rem] md:text-xs uppercase text-neutral-500 mb-3 fade-in">
+          About
+        </p>
+        <h2 class="jp text-2xl md:text-3xl leading-relaxed text-neutral-900 fade-in">
+          光と静けさを、家具というかたちに。
+        </h2>
+      </div>
+
+      <!-- 1) Philosophy -->
+      <div class="grid gap-12 md:grid-cols-[1.25fr_1fr] items-start">
+
+        <!-- Text -->
+        <div class="jp text-sm md:text-base text-neutral-700 leading-[1.9] space-y-6 fade-in">
+          <h3 class="heading-koti wide text-[0.7rem] uppercase text-neutral-500">
+            PHILOSOPHY
+          </h3>
+          <p>
+            北欧の暮らしが大切にしてきたのは、ものの数ではなく、ものとの距離でした。
+            余白のある部屋は、心に余裕をつくり、静けさは、時間の流れをやわらかくします。
+          </p>
+          <p>
+            Koti の家具は、その静かな空気をかたちにするために、
+            シルエット、光の入り方、木目の表情まで、すべてが丁寧に設計されています。
+          </p>
+          <p>
+            部屋に「足す」のではなく、空気を「整える」こと。
+            それが、Koti が目指している静けさのデザインです。
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div
+          class="aspect-[4/3] md:aspect-[5/4] overflow-hidden bg-neutral-100 fade-in koti-line shadow-[4px_4px_12px_rgba(0,0,0,0.06)]">
+          <img src="koti-about-01.png" alt="Soft light in a quiet Nordic room"
+            class="w-full h-full object-cover object-center parallax-x" loading="lazy" />
+        </div>
+
+        <!-- 2) Materials & Craftsmanship -->
+        <div class="grid gap-14 md:grid-cols-2">
+
+          <div class="space-y-4 fade-in">
+            <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-neutral-500">
+              MATERIALS
+            </h3>
+            <p class="jp text-sm md:text-base text-neutral-700 leading-[1.9]">
+              木材そのものが持つ温度と、光を受けたときの影のやわらかさ。
+              自然素材の不揃いさは、暮らしのリズムそのものです。
+              Koti はその「揺らぎ」を大切にしながら、空間になじむ静かな表情を選び取っています。
+            </p>
+          </div>
+
+          <div class="space-y-4 fade-in">
+            <h3 class="text-[0.65rem] tracking-[0.22em] uppercase text-neutral-500">
+              CRAFTSMANSHIP
+            </h3>
+            <p class="jp text-sm md:text-base text-neutral-700 leading-[1.9]">
+              派手さよりも、落ち着いた佇まいを。
+              角の丸み、脚の太さ、天板の厚み。
+              すべてのラインが「音を立てない」ように、細部まで整えられています。
+              静けさは、つくり込みの先に生まれると考えています。
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 3) Message -->
+        <div class="pt-6 md:pt-10 text-center fade-in">
+          <p class="jp text-xs tracking-[0.25em] uppercase text-neutral-500 mb-3">
+            MESSAGE
+          </p>
+          <p class="jp text-lg md:text-xl text-neutral-800 leading-relaxed mb-3">
+            静けさは、つくり込まれたデザインの先にある。
+          </p>
+          <p class="jp text-xs md:text-sm text-neutral-600 leading-relaxed max-w-xl mx-auto">
+            光が広がり、影がやわらかく落ちる部屋。
+            その空気をそっと支えるために、Koti は生まれました。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section id="products" class="py-20 md:py-28 bg-neutral-50/80">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12">
+
+      <!-- Heading -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div>
+          <p class="tracking-[0.3em] text-[0.7rem] md:text-xs uppercase text-neutral-500 mb-3">
+            Products
+          </p>
+          <h2 class="jp text-2xl md:text-3xl leading-relaxed text-neutral-900">
+            静けさをかたちにした、3つの家具。
+          </h2>
+        </div>
+
+        <p class="jp text-xs md:text-sm text-neutral-600 max-w-md leading-relaxed">
+          部屋を埋めるのではなく、整えるための家具。<br />
+          Koti のコレクションは、少数精鋭で構成されています。
+        </p>
+      </div>
+
+      <!-- 3 items -->
+      <div class="grid gap-12 md:gap-10 md:grid-cols-3">
+
+        <article class="space-y-4 group fade-in">
+          <div
+            class="aspect-[4/4] md:aspect-[4/5] rounded-2xl bg-neutral-100 overflow-hidden transition-transform duration-500 group-hover:scale-[1.03]">
+            <img src="koti-chair.png" alt="Nord Chair 01" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="space-y-1 fade-in">
+            <h3 class="text-xs tracking-[0.22em] uppercase text-neutral-700">
+              Nord Chair 01
+            </h3>
+            <p class="jp text-sm text-neutral-700 leading-relaxed">
+              やわらかなカーブと細い脚。<br />
+              そこにあるだけで、空気が静かになる椅子。
+            </p>
+          </div>
+        </article>
+
+        <article class="space-y-4 group fade-in">
+          <div
+            class="aspect-[4/4] md:aspect-[4/5] rounded-2xl bg-neutral-100 overflow-hidden transition-transform duration-500 group-hover:scale-[1.03]">
+            <img src="koti-table.png" alt="Luno Table" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="space-y-1 fade-in">
+            <h3 class="text-xs tracking-[0.22em] uppercase text-neutral-700">
+              Luno Table
+            </h3>
+            <p class="jp text-sm text-neutral-700 leading-relaxed">
+              まっすぐな線と、やわらかな角。<br />
+              光と影が静かに移ろう、余白の多いテーブル。
+            </p>
+          </div>
+        </article>
+
+        <article class="space-y-4 group fade-in">
+          <div
+            class="aspect-[4/4] md:aspect-[4/5] rounded-2xl bg-neutral-100 overflow-hidden transition-transform duration-500 group-hover:scale-[1.03]">
+            <img src="koti-lamp.png" alt="Soft Glow Lamp" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="space-y-1 fade-in">
+            <h3 class="text-xs tracking-[0.22em] uppercase text-neutral-700">
+              Soft Glow Lamp
+            </h3>
+            <p class="jp text-sm text-neutral-700 leading-relaxed">
+              壁にふわりと広がる光。<br />
+              夜の部屋を、静かにやわらげるランプ。
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12">
+
+      <!-- Heading -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div>
+          <p class="tracking-[0.3em] text-[0.7rem] md:text-xs uppercase text-neutral-500 mb-3 fade-in">
+            Gallery
+          </p>
+          <h2 class="jp text-2xl md:text-3xl leading-relaxed text-neutral-900 fade-in">
+            光と余白のある部屋。
+          </h2>
+        </div>
+
+        <p class="jp text-xs md:text-sm text-neutral-600 max-w-md leading-relaxed fade-in">
+          家具だけでなく、「空間としてどう見えるか」。<br>
+          その視点で切り取った Koti の部屋たちです。
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid gap-6 md:grid-cols-3">
+
+        <div
+          class="md:col-span-2 aspect-[4/3] md:aspect-[16/9] rounded-2xl overflow-hidden bg-neutral-100 group fade-in">
+          <img src="koti-room-01.png" alt="Bright Nordic living room"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            loading="lazy" />
+        </div>
+
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-100 group fade-in">
+          <img src="koti-room-02.png" alt="Corner with chair and light"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            loading="lazy" />
+        </div>
+
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-100 group fade-in">
+          <img src="koti-room-03.png" alt="Table and lamp detail"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            loading="lazy" />
+        </div>
+
+        <div class="md:col-span-2 aspect-[16/9] rounded-2xl overflow-hidden bg-neutral-100 group fade-in">
+          <img src="koti-room-04.png" alt="Quiet dining space"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            loading="lazy" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="mt-32 md:mt-40 border-t border-neutral-200 bg-neutral-50/40">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-16 md:py-20">
+
+      <p class="jp text-sm md:text-base text-neutral-600 leading-loose max-w-lg mb-12 mt-2 fade-in">
+        光がそっと差し込み、影がやわらかく広がる部屋。
+        その空気を静かに支えるのが、Koti の家具です。
+      </p>
+
+      <p class="tracking-[0.35em] text-[0.75rem] uppercase text-neutral-700 mb-1 fade-in">
+        K O T I
+      </p>
+
+      <p class="jp text-xs text-neutral-500 mb-10 fade-in">
+        静けさをつくる、北欧ミニマル家具ブランド。
+      </p>
+
+      <p class="text-[0.7rem] text-neutral-400 fade-in">
+        © 2025 Koti Furniture. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- ===== JS: Lenis + Scroll Animations ===== -->
+  <script>
+    // Lenis 初期化（CDN 読み込み前提）
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.08,
+      wheelMultiplier: 0.9
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // アンカーリンクを Lenis でスムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: -80 });
+      });
+    });
+
+    // スクロールでヘッダーを少し締める
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        header.classList.add("shadow-sm", "bg-white/90");
+      } else {
+        header.classList.remove("shadow-sm", "bg-white/90");
+      }
+    });
+
+    // フェードイン Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: "0px 0px -20px 0px"
+      }
+    );
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+    // ボタンのディレイ付きフェード
+    document.querySelectorAll(".fade-btn").forEach((el, index) => {
+      observer.observe(el);
+      el.style.transitionDelay = `${0.3 + index * 0.15}s`;
+    });
+
+    // 超微パララックス（0.2〜0.3% 横移動）
+    document.addEventListener("scroll", () => {
+      const targets = document.querySelectorAll(".parallax-x");
+      const s = window.scrollY * 0.002;
+      targets.forEach(el => {
+        el.style.transform = `translateX(${s}%)`;
+      });
+    });
+  </script>
+
+</body>
+
+</html>
